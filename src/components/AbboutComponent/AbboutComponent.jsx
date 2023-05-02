@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export default function AbboutComponent() {
   return (
-    <div className="h-screen bg-black text-white pt-20 flex" id="abbout">
+    <div className="bg-black text-white py-20 flex h-full" id="abbout">
       <div className="relative">
-        <div className="flex items-center justify-center w-full gap-5 text-base text-gray-500 tracking-wide px-10">
-          <p className="text-end">
+        <div className="flex items-center justify-center w-full gap-5 text-base text-gray-500 tracking-wide px-10 max-[769px]:flex-col ">
+          <p className="text-end max-[769px]:text-center">
             Atualmente, estou cursando Análise e Desenvolvimento de Sistemas e
             sou estagiário de Desenvolvimento Web, atuando tanto no Backend
             quanto no Frontend. Iniciei minha carreira na área de programação em
@@ -18,7 +18,7 @@ export default function AbboutComponent() {
             src={"https://avatars.githubusercontent.com/u/112219645?v=4"}
             className="rounded-[50%]"
           />
-          <p>
+          <p className="max-[769px]:text-center">
             Desempenhei várias atividades, entre elas:{" "}
             <span className="text-lg text-white">
               implementação de gateway de pagamento
