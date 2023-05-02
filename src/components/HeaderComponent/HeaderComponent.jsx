@@ -10,9 +10,9 @@ export default function HeaderComponent() {
       <MenuComponent />
       <div className="h-full w-full flex flex-col justify-center items-center">
         <PresentationComponent
-          title={"Bem vindo, me chamo"}
+          title={"Seja muito bem-vindo(a)! Meu nome é"}
           name={"André Luiz"}
-          smallText={"Atualmente curso Análise e desenvolvimento de sistemas e sou Estágiário de Desenvolvimento Web Full Stack"}
+          smallText={"Apresento-lhe meu portfólio, no qual é possível verificar minhas habilidades e competências. Fico à disposição para eventuais dúvidas ou para mais informações. Obrigado pela visita!"}
         />
       </div>
     </section>

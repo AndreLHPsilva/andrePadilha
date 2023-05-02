@@ -15,7 +15,7 @@ export default function PresentationComponent({ title, name, smallText }) {
         className="h-screen w-full flex flex-col justify-center items-center"
         data-aos="zoom-in"
       >
-        <p className="text-2xl text-gray-300 z-50 max-[426px]:text-base">
+        <p className="text-2xl text-gray-300 z-50 max-[426px]:text-base max-[426px]:max-w-[35ch] max-[426px]:text-center">
           {title}{" "}
           <span className="text-3xl font-medium max-[426px]:text-xl">
             {name}.
@@ -43,7 +43,7 @@ export default function PresentationComponent({ title, name, smallText }) {
           >
             <Icon
               icon="mdi:github"
-              color="#004bc3"
+              color="#719bde"
               width={48}
               height={48}
               className="max-[426px]:w-9 max-[426px]:h-9"
@@ -57,7 +57,7 @@ export default function PresentationComponent({ title, name, smallText }) {
           >
             <Icon
               icon="mdi:linkedin"
-              color="#004bc3"
+              color="#719bde"
               width={48}
               height={48}
               className="max-[426px]:w-9 max-[426px]:h-9"
@@ -71,7 +71,7 @@ export default function PresentationComponent({ title, name, smallText }) {
           >
             <Icon
               icon="dashicons:whatsapp"
-              color="#004bc3"
+              color="#719bde"
               width={48}
               height={48}
               className="max-[426px]:w-9 max-[426px]:h-9"
