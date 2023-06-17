@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function AbboutComponent() {
   return (
     <div className="bg-black text-white py-20 flex h-full" id="abbout">
