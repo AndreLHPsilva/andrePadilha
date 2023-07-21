@@ -90,7 +90,7 @@ export default function MenuComponent({ activeIndex, goToIndex }) {
               ></span>
             </li>
             <li className="hover:scale-110 transition-all flex flex-col" onClick={() => {goToIndex(2), handleLinkMenu()}}>
-              <h2 className="cursor-pointer">Experiências</h2>
+              <h2 className="cursor-pointer">Tecnologias</h2>
               <span
                 className={`p-[1px] rounded transition-all duration-300 ${
                   activeIndex == 2
