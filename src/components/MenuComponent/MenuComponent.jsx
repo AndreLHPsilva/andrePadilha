@@ -3,13 +3,12 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 
-export default function MenuComponent() {
+export default function MenuComponent({ activeIndex, goToIndex }) {
   const [openMenu, setOpenMenu] = useState(false);
 
   const handleLinkMenu = () => {
     setOpenMenu(false);
   };
-
 
   return (
     <>
@@ -21,14 +20,7 @@ export default function MenuComponent() {
         }`}
       >
         <div className="max-[769px]:flex max-[769px]:justify-around max-[769px]:items-center max-[769px]:w-full">
-          <Link
-            to="home"
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}
-            className="cursor-pointer z-50"
-          >
+          <div onClick={() => {goToIndex(0), handleLinkMenu()}} className="cursor-pointer z-50">
             <picture className="z-50" onClick={handleLinkMenu}>
               <Image
                 src={"./imgs/AlhpS.svg"}
@@ -45,7 +37,7 @@ export default function MenuComponent() {
                 className="hover:scale-110 transition-all max-[769px]:hidden z-50"
               />
             </picture>
-          </Link>
+          </div>
           <Icon
             icon="ep:close-bold"
             color="#004bc3"
@@ -72,76 +64,60 @@ export default function MenuComponent() {
             openMenu ? "max-[769px]:flex mt-10" : "max-[769px]:hidden"
           }`}
         >
-          <ul className={`flex gap-5 max-[769px]:flex-col ${openMenu ? "max-[769px]:text-center" : ""}`}>
-            <li className="hover:scale-110 transition-all">
-              <Link
-                activeClass={"border-b-2 border-gray-50 backdrop-blur-2xl"}
-                to="home"
-                spy={true}
-                smooth={true}
-                offset={0}
-                duration={500}
-                className="cursor-pointer"
-                onClick={handleLinkMenu}
-              >
-                Home
-              </Link>
+          <ul
+            className={`flex gap-5 max-[769px]:flex-col ${
+              openMenu ? "max-[769px]:text-center" : ""
+            }`}
+          >
+            <li className="hover:scale-110 transition-all flex flex-col" onClick={() => {goToIndex(0), handleLinkMenu()}}>
+              <h2 className="cursor-pointer">Home</h2>
+              <span
+                className={`p-[1px] rounded transition-all duration-300 ${
+                  activeIndex == 0
+                    ? "bg-[#719bde] w-full"
+                    : "bg-transparent w-0"
+                }`}
+              ></span>
             </li>
-            <li className="hover:scale-110 transition-all">
-              <Link
-                activeClass="border-b-2 border-gray-50"
-                to="abbout"
-                spy={true}
-                smooth={true}
-                offset={0}
-                duration={1000}
-                className="cursor-pointer"
-                onClick={handleLinkMenu}
-              >
-                Sobre
-              </Link>
+            <li className="hover:scale-110 transition-all flex flex-col" onClick={() => {goToIndex(1), handleLinkMenu()}}>
+              <h2 className="cursor-pointer">Sobre</h2>
+              <span
+                className={`p-[1px] rounded transition-all duration-300 ${
+                  activeIndex == 1
+                    ? "bg-[#719bde] w-full"
+                    : "bg-transparent w-0"
+                }`}
+              ></span>
             </li>
-            <li className="hover:scale-110 transition-all">
-              <Link
-                activeClass="border-b-2 border-gray-50"
-                to="experience"
-                spy={true}
-                smooth={true}
-                offset={0}
-                duration={1000}
-                className="cursor-pointer"
-                onClick={handleLinkMenu}
-              >
-                Experiência
-              </Link>
+            <li className="hover:scale-110 transition-all flex flex-col" onClick={() => {goToIndex(2), handleLinkMenu()}}>
+              <h2 className="cursor-pointer">Experiências</h2>
+              <span
+                className={`p-[1px] rounded transition-all duration-300 ${
+                  activeIndex == 2
+                    ? "bg-[#719bde] w-full"
+                    : "bg-transparent w-0"
+                }`}
+              ></span>
             </li>
-            <li className="hover:scale-110 transition-all">
-              <Link
-                activeClass="border-b-2 border-gray-50"
-                to="projects"
-                spy={true}
-                smooth={true}
-                offset={0}
-                duration={1000}
-                className="cursor-pointer"
-                onClick={handleLinkMenu}
-              >
-                Projetos
-              </Link>
+            <li className="hover:scale-110 transition-all flex flex-col" onClick={() => {goToIndex(3), handleLinkMenu()}}>
+              <h2 className="cursor-pointer">Projetos</h2>
+              <span
+                className={`p-[1px] rounded transition-all duration-300 ${
+                  activeIndex == 3
+                    ? "bg-[#719bde] w-full"
+                    : "bg-transparent w-0"
+                }`}
+              ></span>
             </li>
-            <li className="hover:scale-110 transition-all">
-              <Link
-                activeClass="border-b-2 border-gray-50"
-                to="contact"
-                spy={true}
-                smooth={true}
-                offset={0}
-                duration={1000}
-                className="cursor-pointer"
-                onClick={handleLinkMenu}
-              >
-                Contato
-              </Link>
+            <li className="hover:scale-110 transition-all flex flex-col" onClick={() => {goToIndex(4), handleLinkMenu()}}>
+              <h2 className="cursor-pointer">Contato</h2>
+              <span
+                className={`p-[1px] rounded transition-all duration-300 ${
+                  activeIndex == 4
+                    ? "bg-[#719bde] w-full"
+                    : "bg-transparent w-0"
+                }`}
+              ></span>
             </li>
           </ul>
         </nav>
