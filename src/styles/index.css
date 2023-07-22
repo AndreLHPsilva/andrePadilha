@@ -12,3 +12,25 @@
   height: 16px;
   border-radius: 8px;
 }
+
+::-webkit-scrollbar {
+  width: 4px; /* Largura da barra de rolagem vertical */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00c7ff; /* Cor do "ponteiro" da barra de rolagem */
+  border-radius: 6px; /* Raio das bordas do "ponteiro" */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #00c7ff; /* Cor do "ponteiro" da barra de rolagem ao passar o mouse */
+}
+
+/* Gecko (Firefox) */
+html {
+  scrollbar-width: thin; /* Largura da barra de rolagem vertical */
+}
+
+body {
+  scrollbar-color: #00c7ff #fff; /* Cor do "ponteiro" e fundo da barra de rolagem */
+}

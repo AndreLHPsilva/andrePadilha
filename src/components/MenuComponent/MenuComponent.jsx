@@ -99,7 +99,7 @@ export default function MenuComponent({ activeIndex, goToIndex }) {
                 }`}
               ></span>
             </li>
-            <li className="hover:scale-110 transition-all flex flex-col" onClick={() => {goToIndex(3), handleLinkMenu()}}>
+            {/* <li className="hover:scale-110 transition-all flex flex-col" onClick={() => {goToIndex(3), handleLinkMenu()}}>
               <h2 className="cursor-pointer">Projetos</h2>
               <span
                 className={`p-[1px] rounded transition-all duration-300 ${
@@ -108,12 +108,12 @@ export default function MenuComponent({ activeIndex, goToIndex }) {
                     : "bg-transparent w-0"
                 }`}
               ></span>
-            </li>
-            <li className="hover:scale-110 transition-all flex flex-col" onClick={() => {goToIndex(4), handleLinkMenu()}}>
+            </li> */}
+            <li className="hover:scale-110 transition-all flex flex-col" onClick={() => {goToIndex(3), handleLinkMenu()}}>
               <h2 className="cursor-pointer">Contato</h2>
               <span
                 className={`p-[1px] rounded transition-all duration-300 ${
-                  activeIndex == 4
+                  activeIndex == 3
                     ? "bg-[#719bde] w-full"
                     : "bg-transparent w-0"
                 }`}

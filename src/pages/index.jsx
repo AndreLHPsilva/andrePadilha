@@ -173,7 +173,7 @@ export default function Home() {
           </div>
         </SwiperSlide>
 
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <div style={{ position: "relative", height: "100%" }}>
             <AnimatePresence initial={false}>
               {activeIndex === 3 && (
@@ -197,12 +197,12 @@ export default function Home() {
               )}
             </AnimatePresence>
           </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
 
         <SwiperSlide>
           <div style={{ position: "relative", height: "100%" }}>
             <AnimatePresence initial={false}>
-              {activeIndex === 4 && (
+              {activeIndex === 3 && (
                 <motion.div
                   key={0}
                   initial="initial"
@@ -215,7 +215,7 @@ export default function Home() {
                     top: 0,
                     left: 0,
                     right: 0,
-                    zIndex: activeIndex === 4 ? 1 : -1,
+                    zIndex: activeIndex === 3 ? 1 : -1,
                   }}
                 >
                   <ContactComponent />

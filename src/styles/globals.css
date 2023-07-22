@@ -15,3 +15,29 @@ body {
     background-color: #000622;
   }
 }
+
+.formContactBG{
+  animation: colorChangeForm 3.5s infinite alternate;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 30px #66acf9 inset !important;
+  box-shadow: 0 0 0 30px #66acf9 inset !important;
+  -webkit-text-fill-color: #333 !important;
+}
+
+input:focus {
+  border-color: #66acf9 !important;
+  outline: none;
+}
+
+@keyframes colorChangeForm {
+  0% {
+    background-color: #ffffff;
+  }
+  100%{
+    background-color: #9fecff;
+  }
+}
