@@ -5,22 +5,35 @@ import { Transition, Dialog } from "@headlessui/react";
 import { TextField } from "@mui/material";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
-export default function ModalFormEmailComponent({openModal, setOpenModal}) {
+export default function ModalFormEmailComponent({ openModal, setOpenModal }) {
   const router = useRouter();
   const [name, setName] = useState(null);
   const [email, setEmail] = useState(null);
   const [message, setMessage] = useState(null);
 
+  const [recaptcha, setRecaptcha] = useState(null);
+
   async function handleSubmit(e) {
     e.preventDefault();
-    useLoading({is_loading: true});
+    useLoading({ is_loading: true });
+
+    if (!recaptcha) {
+      useNotify({
+        message: "Por favor, preencha o reCAPTCHA",
+        type: "failure",
+      });
+      useLoading({ is_loading: false });
+      return;
+    }
 
     if (!message || !name || !email) {
       useNotify({
         message: "Formulário com informações incompletas",
         type: "failure",
       });
+      useLoading({ is_loading: false });
       return;
     }
 
@@ -52,8 +65,8 @@ export default function ModalFormEmailComponent({openModal, setOpenModal}) {
         message: "Desculpe pelo transtorno, erro interno ao enviar e-mail.",
         type: "failure",
       });
-    }finally{
-      useLoading({is_loading: false})
+    } finally {
+      useLoading({ is_loading: false });
     }
   }
 
@@ -62,8 +75,8 @@ export default function ModalFormEmailComponent({openModal, setOpenModal}) {
   }
 
   return (
-    <Transition appear show={openModal} className="">
-      <Dialog as="div" className="relative z-10" onClose={handleCleanModal}>
+    <Transition appear show={openModal}>
+      <Dialog as="div" className="relative z-50" onClose={handleCleanModal}>
         <Transition.Child
           enter="ease-out duration-300"
           enterFrom="opacity-0"
@@ -141,6 +154,20 @@ export default function ModalFormEmailComponent({openModal, setOpenModal}) {
                     className="resize-none outline-none border border-gray-600 rounded-md w-full mt-5 p-3 transition-all formContactBG hover:border-black hover:shadow-inner shadow placeholder:text-gray-800 text-black font-semibold "
                     placeholder="Digite sua mensagem"
                   />
+
+                  <div className="sm:hidden flex">
+                    <ReCAPTCHA
+                      sitekey={`${process.env.SITE_KEY_RECAPTCHA}`}
+                      onChange={(e) => setRecaptcha(e)}
+                      size="compact"
+                    />
+                  </div>
+                  <div className="sm:flex hidden">
+                    <ReCAPTCHA
+                      sitekey={`${process.env.SITE_KEY_RECAPTCHA}`}
+                      onChange={(e) => setRecaptcha(e)}
+                    />
+                  </div>
 
                   <button
                     type="submit"

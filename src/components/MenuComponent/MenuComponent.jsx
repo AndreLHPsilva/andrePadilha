@@ -13,7 +13,7 @@ export default function MenuComponent({ activeIndex, goToIndex }) {
   return (
     <>
       <header
-        className={`w-full fixed flex justify-around items-center py-5 border-b-2 border-gray-50 border-opacity-5 backdrop-blur-sm backdrop-brightness-90 z-50 ${
+        className={`w-full fixed flex justify-around items-center py-5 border-b-2 border-gray-50 border-opacity-5 backdrop-blur-sm backdrop-brightness-90 z-40 ${
           openMenu
             ? "max-[769px]:flex-col max-[769px]:h-screen max-[769px]:justify-start max-[769px]:backdrop-brightness-50 max-[769px]:transition-all"
             : ""
