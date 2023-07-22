@@ -1,14 +1,34 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { Link } from "react-scroll";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
-export default function MenuComponent({ activeIndex, goToIndex }) {
+export default function MenuComponent({
+  activeIndex,
+  goToIndex = null,
+  withoutSwipper = false,
+}) {
   const [openMenu, setOpenMenu] = useState(false);
+  const router = useRouter();
 
-  const handleLinkMenu = () => {
+  function handleLinkMenu() {
     setOpenMenu(false);
-  };
+  }
+
+  function handleChangeMenu(index) {
+    if (!withoutSwipper) {
+      if(!!goToIndex){
+        goToIndex(index);
+        handleLinkMenu();
+      }
+    } else {
+      if (index === 99) {
+        router.reload();
+      } else {
+        router.push({ pathname: "/", query: { activeIndex: index } });
+      }
+    }
+  }
 
   return (
     <>
@@ -20,7 +40,12 @@ export default function MenuComponent({ activeIndex, goToIndex }) {
         }`}
       >
         <div className="max-[769px]:flex max-[769px]:justify-around max-[769px]:items-center max-[769px]:w-full">
-          <div onClick={() => {goToIndex(0), handleLinkMenu()}} className="cursor-pointer z-50">
+          <div
+            onClick={() => {
+              handleChangeMenu(0);
+            }}
+            className="cursor-pointer z-50"
+          >
             <picture className="z-50" onClick={handleLinkMenu}>
               <Image
                 src={"./imgs/AlhpS.svg"}
@@ -69,7 +94,12 @@ export default function MenuComponent({ activeIndex, goToIndex }) {
               openMenu ? "max-[769px]:text-center" : ""
             }`}
           >
-            <li className="hover:scale-110 transition-all flex flex-col" onClick={() => {goToIndex(0), handleLinkMenu()}}>
+            <li
+              className="hover:scale-110 transition-all flex flex-col"
+              onClick={() => {
+                handleChangeMenu(0);
+              }}
+            >
               <h2 className="cursor-pointer">Home</h2>
               <span
                 className={`p-[1px] rounded transition-all duration-300 ${
@@ -79,7 +109,12 @@ export default function MenuComponent({ activeIndex, goToIndex }) {
                 }`}
               ></span>
             </li>
-            <li className="hover:scale-110 transition-all flex flex-col" onClick={() => {goToIndex(1), handleLinkMenu()}}>
+            <li
+              className="hover:scale-110 transition-all flex flex-col"
+              onClick={() => {
+                handleChangeMenu(1);
+              }}
+            >
               <h2 className="cursor-pointer">Sobre</h2>
               <span
                 className={`p-[1px] rounded transition-all duration-300 ${
@@ -89,7 +124,12 @@ export default function MenuComponent({ activeIndex, goToIndex }) {
                 }`}
               ></span>
             </li>
-            <li className="hover:scale-110 transition-all flex flex-col" onClick={() => {goToIndex(2), handleLinkMenu()}}>
+            <li
+              className="hover:scale-110 transition-all flex flex-col"
+              onClick={() => {
+                handleChangeMenu(2);
+              }}
+            >
               <h2 className="cursor-pointer">Tecnologias</h2>
               <span
                 className={`p-[1px] rounded transition-all duration-300 ${
@@ -99,17 +139,27 @@ export default function MenuComponent({ activeIndex, goToIndex }) {
                 }`}
               ></span>
             </li>
-            {/* <li className="hover:scale-110 transition-all flex flex-col" onClick={() => {goToIndex(3), handleLinkMenu()}}>
+            <li
+              className="hover:scale-110 transition-all flex flex-col"
+              onClick={() => {
+                handleChangeMenu(99);
+              }}
+            >
               <h2 className="cursor-pointer">Projetos</h2>
               <span
                 className={`p-[1px] rounded transition-all duration-300 ${
-                  activeIndex == 3
+                  activeIndex == 99
                     ? "bg-[#719bde] w-full"
                     : "bg-transparent w-0"
                 }`}
               ></span>
-            </li> */}
-            <li className="hover:scale-110 transition-all flex flex-col" onClick={() => {goToIndex(3), handleLinkMenu()}}>
+            </li>
+            <li
+              className="hover:scale-110 transition-all flex flex-col"
+              onClick={() => {
+                handleChangeMenu(3);
+              }}
+            >
               <h2 className="cursor-pointer">Contato</h2>
               <span
                 className={`p-[1px] rounded transition-all duration-300 ${

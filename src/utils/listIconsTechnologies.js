@@ -1,11 +1,12 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { Icon } from "@iconify/react";
+import { AnimatePresence, motion } from "framer-motion";
 const headerVariants = {
   initial: { opacity: 0, x: "100%" },
   animate: { opacity: 1, x: 0 },
   exit: { opacity: 0, x: "100%" },
 };
 
-export const listTechnologies = [
+export const listIconsTechnologies = [
   <AnimatePresence initial={true}>
     <motion.li
       key={0}
@@ -15,7 +16,7 @@ export const listTechnologies = [
       variants={headerVariants}
       transition={{ duration: 0.8, delay: 1.6 }}
     >
-      NODE
+      <Icon icon="la:node" color="white" width={48} height={48} />
     </motion.li>
   </AnimatePresence>,
   <AnimatePresence initial={true}>
@@ -27,7 +28,7 @@ export const listTechnologies = [
       variants={headerVariants}
       transition={{ duration: 0.8, delay: 1.9 }}
     >
-      Typescript
+      <Icon icon="bxl:typescript" color="white" width="48" height="48" />
     </motion.li>
   </AnimatePresence>,
   <AnimatePresence initial={true}>
@@ -39,7 +40,7 @@ export const listTechnologies = [
       variants={headerVariants}
       transition={{ duration: 0.8, delay: 2.2 }}
     >
-      API's RestFull
+      <Icon icon="mdi:api" color="white" width="48" height="48" />
     </motion.li>
   </AnimatePresence>,
   <AnimatePresence initial={true}>
@@ -51,7 +52,7 @@ export const listTechnologies = [
       variants={headerVariants}
       transition={{ duration: 0.8, delay: 2.5 }}
     >
-      Clean Architecture
+      <Icon icon="akar-icons:php-fill" color="white" width="48" height="48" />
     </motion.li>
   </AnimatePresence>,
   <AnimatePresence initial={true}>
@@ -63,7 +64,7 @@ export const listTechnologies = [
       variants={headerVariants}
       transition={{ duration: 0.8, delay: 2.8 }}
     >
-      Clean Code
+      <Icon icon="file-icons:laravel" color="white" width="48" height="48" />
     </motion.li>
   </AnimatePresence>,
   <AnimatePresence initial={true}>
@@ -75,7 +76,7 @@ export const listTechnologies = [
       variants={headerVariants}
       transition={{ duration: 0.8, delay: 3.1 }}
     >
-      SOLID
+      <Icon icon="bi:github" color="white" width="48" height="48" />
     </motion.li>
   </AnimatePresence>,
   <AnimatePresence initial={true}>
@@ -87,7 +88,7 @@ export const listTechnologies = [
       variants={headerVariants}
       transition={{ duration: 0.8, delay: 3.4 }}
     >
-      PHP
+      <Icon icon="simple-icons:rabbitmq" color="white" width="48" height="48" />
     </motion.li>
   </AnimatePresence>,
   <AnimatePresence initial={true}>
@@ -99,7 +100,12 @@ export const listTechnologies = [
       variants={headerVariants}
       transition={{ duration: 0.8, delay: 3.7 }}
     >
-      Laravel
+      <Icon
+        icon="simple-icons:apachekafka"
+        color="white"
+        width="48"
+        height="48"
+      />
     </motion.li>
   </AnimatePresence>,
   <AnimatePresence initial={true}>
@@ -111,7 +117,7 @@ export const listTechnologies = [
       variants={headerVariants}
       transition={{ duration: 0.8, delay: 4.0 }}
     >
-      Criação de Pipeline com GitHub Actions
+      <Icon icon="file-icons:prisma" color="white" width="48" height="48" />
     </motion.li>
   </AnimatePresence>,
   <AnimatePresence initial={true}>
@@ -123,67 +129,7 @@ export const listTechnologies = [
       variants={headerVariants}
       transition={{ duration: 0.8, delay: 4.3 }}
     >
-      Versionamento com GitHub
-    </motion.li>
-  </AnimatePresence>,
-  <AnimatePresence initial={true}>
-    <motion.li
-      key={0}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      variants={headerVariants}
-      transition={{ duration: 0.8, delay: 4.6 }}
-    >
-      Microsserviços
-    </motion.li>
-  </AnimatePresence>,
-  <AnimatePresence initial={true}>
-    <motion.li
-      key={0}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      variants={headerVariants}
-      transition={{ duration: 0.8, delay: 4.9 }}
-    >
-      RabbitMQ
-    </motion.li>
-  </AnimatePresence>,
-  <AnimatePresence initial={true}>
-    <motion.li
-      key={0}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      variants={headerVariants}
-      transition={{ duration: 0.8, delay: 5.2 }}
-    >
-      Apache kafka
-    </motion.li>
-  </AnimatePresence>,
-  <AnimatePresence initial={true}>
-    <motion.li
-      key={0}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      variants={headerVariants}
-      transition={{ duration: 0.8, delay: 5.5 }}
-    >
-      Prisma ORM
-    </motion.li>
-  </AnimatePresence>,
-  <AnimatePresence initial={true}>
-    <motion.li
-      key={0}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      variants={headerVariants}
-      transition={{ duration: 0.8, delay: 5.8 }}
-    >
-      MySQL
+      <Icon icon="cib:mysql" color="white" width="48" height="48" />
     </motion.li>
   </AnimatePresence>,
 ];

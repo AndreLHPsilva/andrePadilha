@@ -11,12 +11,12 @@ body {
   0% {
     background-color: #000000;
   }
-  100%{
+  100% {
     background-color: #000622;
   }
 }
 
-.formContactBG{
+.formContactBG {
   animation: colorChangeForm 3.5s infinite alternate;
 }
 
@@ -28,6 +28,42 @@ input:-webkit-autofill:focus {
   -webkit-text-fill-color: #333 !important;
 }
 
+.legend {
+  background-color: #000d36 !important;
+  opacity: 0.1 !important;
+}
+
+.carousel-root{
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.carousel .slide .legend{
+  top: 20% !important;
+  bottom: unset !important;
+}
+
+@media(max-width: 426px){
+  .carousel .slide .legend{
+    top: 5% !important
+  }
+}
+
+.carousel-root img{
+  border-radius: 20px;
+  transition: .5s;
+}
+
+.carousel-root:hover img{
+  filter: brightness(0.5);
+}
+
+.carousel-root:hover .legend {
+  opacity: 1 !important;
+  scale: 1.05;
+  filter: brightness(1)
+}
+
 input:focus {
   border-color: #66acf9 !important;
   outline: none;
@@ -37,7 +73,7 @@ input:focus {
   0% {
     background-color: #ffffff;
   }
-  100%{
+  100% {
     background-color: #9fecff;
   }
 }

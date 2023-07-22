@@ -9,6 +9,7 @@ import ProjectsComponent from "@/components/ProjectsComponent/ProjectsComponent"
 import MenuComponent from "@/components/MenuComponent/MenuComponent";
 
 import { AnimatePresence, motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 const headerVariants = {
   initial: { opacity: 0, x: "-100%" },
@@ -17,10 +18,14 @@ const headerVariants = {
 };
 
 export default function Home() {
+  const router = useRouter();
+  const queryActiveIndex = router.query.activeIndex;
+
   const swiperRef = useRef(null);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(!!queryActiveIndex ? queryActiveIndex : 0);
   const [scrolling, setScrolling] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
+
 
   useEffect(() => {
     const handleScroll = (e) => {
@@ -55,8 +60,12 @@ export default function Home() {
   function goToIndex(index) {
     const swiper = swiperRef.current?.swiper;
     swiper?.updateActiveIndex(index);
-    swiper?.slideTo(index, 700);
     setActiveIndex(index);
+    if(index != 99){
+      swiper?.slideTo(index, 700);
+    }else{
+      router.push("/projetos")
+    }
   }
 
   useEffect(() => {
@@ -65,6 +74,10 @@ export default function Home() {
 
   useEffect(() => {
     const swiper = swiperRef.current?.swiper;
+
+    if(!!queryActiveIndex){
+      goToIndex(activeIndex);
+    }
 
     swiper.on("slideChangeTransitionStart", () => {
       setIsAnimating(true);
@@ -79,6 +92,14 @@ export default function Home() {
       swiper.off("slideChangeTransitionEnd");
     };
   }, []);
+
+  useEffect(() => {
+    const activeIndexNumber = parseInt(queryActiveIndex);
+    if (!isNaN(activeIndexNumber)) {
+      setActiveIndex(activeIndexNumber);
+      goToIndex(activeIndexNumber);
+    }
+  }, [queryActiveIndex]);
 
   return (
     <>
@@ -123,7 +144,7 @@ export default function Home() {
 
         <SwiperSlide>
           <div style={{ position: "relative", height: "100%" }}>
-            <AnimatePresence initial={false}>
+            <AnimatePresence initial={true}>
               {activeIndex === 1 && (
                 <motion.div
                   key={0}
@@ -149,7 +170,7 @@ export default function Home() {
 
         <SwiperSlide>
           <div style={{ position: "relative", height: "100%" }}>
-            <AnimatePresence initial={false}>
+            <AnimatePresence initial={true}>
               {activeIndex === 2 && (
                 <motion.div
                   key={0}
@@ -175,7 +196,7 @@ export default function Home() {
 
         {/* <SwiperSlide>
           <div style={{ position: "relative", height: "100%" }}>
-            <AnimatePresence initial={false}>
+            <AnimatePresence initial={true}>
               {activeIndex === 3 && (
                 <motion.div
                   key={0}
