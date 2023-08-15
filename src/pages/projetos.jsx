@@ -25,66 +25,36 @@ export default function Projetos() {
               cada um clicando no icone do GitHub.
             </span>
           </div>
-          <section className="my-10 w-full flex items-center justify-center">
-            <Carousel
-              showArrows={false}
-              showStatus={false}
-              showThumbs={false}
-              infiniteLoop={true}
-              autoPlay={true}
-              interval={3500}
-              transitionTime={1000}
-              stopOnHover={true}
-              className="lg:w-[80%] relative"
-            >
+          <section className="my-10 w-full">
+            <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 max-h-10">
               {listProjects.length > 0 &&
                 listProjects.map((project) => {
                   return (
                     <>
-                      <div className="max-h-[550px]">
-                        <img
-                          src={project.path_main_img}
-                          alt="Imagem do projeto"
-                          className="object-cover w-full"
-                        />
-                        <div className="legend absolute top-2/4 transition-all duration-1000 flex flex-col sm:gap-5 gap-2">
-                          <div className="flex flex-col">
-                            <span className="sm:text-xl text-xs">{project.title}</span>
-                            <span className="text-[10px]">{project.description}</span>
-                          </div>
-                          <div className="flex gap-2 justify-center">
-                            {project.tecnologies.length > 0 &&
-                              project.tecnologies.map((tecnology) => {
-                                return <span>{tecnology.name}</span>;
-                              })}
+                      <div className="rounded-lg bg-neutral-200 text-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] flex flex-col">
+                        <div className="border-b-2 border-neutral-100 px-6 py-3 text-black">
+                          {project.title}
+                        </div>
+                        <div className="p-6 flex-1">
+                          <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800">
+                            {project.title}
+                          </h5>
+                          <p className="mb-4 text-sm text-neutral-600 ">
+                            {project.description}
+                          </p>
+                        </div>
+                        <div className="border-t-2 border-neutral-100 px-6 py-3 text-black">
+                          <div className="flex gap-2">
+                            {project.tecnologies.map((tecnology) => {
+                              return <span>{tecnology.name}</span>;
+                            })}
                           </div>
                         </div>
                       </div>
-                      <span className="absolute top-10 right-10 text-black transition-all duration-500 max-[426px]:top-56 max-[426px]:right-5 cursor-pointer hover:scale-110 ">
-                        <Icon
-                          icon="bi:github"
-                          color="#000d36"
-                          width="40"
-                          height="40"
-                          className="sm:w-10 sm:h-10 w-7 h-7"
-                        />
-                      </span>
                     </>
                   );
                 })}
-              {/* <div>
-                <img src="/imgs/ignite.jpg" />
-                <p className="legend">Legend 1</p>
-              </div>
-              <div>
-                <img src="/imgs/ignite.jpg" />
-                <p className="legend">Legend 2</p>
-              </div>
-              <div>
-                <img src="/imgs/ignite.jpg" />
-                <p className="legend">Legend 3</p>
-              </div> */}
-            </Carousel>
+            </div>
           </section>
         </section>
       </main>

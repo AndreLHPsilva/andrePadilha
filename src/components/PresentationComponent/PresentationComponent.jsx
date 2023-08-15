@@ -9,9 +9,7 @@ export default function PresentationComponent({
 }) {
   return (
     <>
-      <div
-        className="h-screen w-full flex flex-col justify-center gap-4 relative lg:px-20 px-10"
-      >
+      <div className="h-screen w-full flex flex-col justify-center gap-4 relative lg:px-20 px-10">
         <span className="tracking-tighter text-gray-500 lg:text-5xl md:text-3xl sm:text-2xl text-xl">
           Backend
         </span>
@@ -71,6 +69,12 @@ export default function PresentationComponent({
               />
             </a>
           </div>
+          <a
+            href="dev-jr-backend.pdf" target="_blank"
+            className="self-start py-2 px-3 bg-transparent border-b-2 rounded-md text-blue-50 transition-all hover:opacity-80 mt-2 hover:scale-105 sm:text-base text-xs"
+          >
+            Baixar Currículo
+          </a>
         </div>
       </div>
     </>
