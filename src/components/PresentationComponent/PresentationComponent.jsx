@@ -8,7 +8,7 @@ export default function PresentationComponent({
 }) {
   return (
     <>
-      <div className="h-screen w-full flex flex-col justify-center gap-4 relative lg:px-20 px-10">
+      <div className="h-screen w-full flex flex-col justify-center gap-4 relative max-[426px]:px-10 px-14">
         <span className="tracking-tighter text-gray-500 lg:text-5xl md:text-3xl sm:text-2xl text-xl">
           Backend
         </span>

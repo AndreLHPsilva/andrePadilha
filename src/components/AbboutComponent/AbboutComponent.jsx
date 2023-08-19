@@ -1,7 +1,7 @@
 export default function AbboutComponent() {
   return (
     <section
-      className="text-white flex flex-col h-screen justify-center lg:px-20 md:px-10 px-10"
+      className="text-white flex flex-col h-screen justify-center max-[426px]:px-10 px-14"
       id="abbout"
     >
       <span className="uppercase tracking-widest lg:text-2xl md:text-xl sm:text-lg text-sm">Perfil</span>

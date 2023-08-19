@@ -8,7 +8,7 @@ export default function ContactComponent() {
   return (
     <>
       <section
-        className="w-full h-screen flex flex-col justify-center md:mt-5 mt-12 lg:px-20 px-12 text-white lg:gap-14 sm:gap-10 gap-5"
+        className="w-full h-screen flex flex-col justify-center max-[426px]:px-5 px-14 text-white lg:gap-14 sm:gap-10 gap-5"
         id="contact"
       >
         <div>

@@ -46,8 +46,8 @@ export default function Projects() {
   return (
     <>
       <MenuComponent activeIndex={99} withoutSwipper={true} />
-      <main className="flex flex-col justify-between pt-28 text-white lg:px-20 px-10 min-h-screen">
-        <section className="flex flex-col lg:gap-5 gap-3 min-h-screen">
+      <main className="flex flex-col justify-between pt-20 text-white lg:px-20 px-10">
+        <section className="flex flex-col lg:gap-5 gap-3">
           <div className="flex flex-col gap-5">
             <div>
               <span className="uppercase tracking-widest lg:text-2xl md:text-xl sm:text-lg text-sm">
@@ -110,7 +110,7 @@ export default function Projects() {
             </div>
           </section>
         </section>
-        <footer className="flex max-[426px]:flex-col gap-5 sm:justify-around items-center py-5 border-t border-teal-300">
+        <footer className="flex max-[426px]:flex-col gap-5 sm:justify-around items-center py-5 border-t border-teal-300 mt-10">
           <div className="flex flex-col gap-5">
             <div className="flex gap-5 w-full justify-center">
               <a

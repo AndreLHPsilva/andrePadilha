@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react";
 export default function ExperienceComponent() {
   return (
     <section
-      className=" text-white flex flex-col h-screen justify-center lg:px-20 px-10 mds:gap-0 gap-5"
+      className=" text-white flex flex-col h-screen justify-center max-[426px]:px-10 px-14 gap-5"
       id="experience"
     >
       <div className="flex flex-col md:justify-center justify-end">
