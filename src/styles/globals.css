@@ -5,11 +5,6 @@
 body {
   font-family: "Poppins";
   animation: colorChange 3.5s infinite alternate;
-  min-height: 100vh;
-}
-#__next{
-  min-height: 100vh;
-
 }
 
 @keyframes colorChange {
