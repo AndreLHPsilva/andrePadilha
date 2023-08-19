@@ -1,5 +1,4 @@
 import { Icon } from "@iconify/react";
-import { motion } from "framer-motion";
 
 export default function PresentationComponent({
   title,
@@ -34,7 +33,7 @@ export default function PresentationComponent({
             >
               <Icon
                 icon="mdi:github"
-                color="#719bde"
+                color="#5eead4"
                 width={48}
                 height={48}
                 className="lg:w-12 lg:h-12 md:w-11 md:h-11 w-9 h-9"
@@ -48,7 +47,7 @@ export default function PresentationComponent({
             >
               <Icon
                 icon="mdi:linkedin"
-                color="#719bde"
+                color="#5eead4"
                 width={48}
                 height={48}
                 className="lg:w-12 lg:h-12 md:w-11 md:h-11 w-9 h-9"
@@ -62,7 +61,7 @@ export default function PresentationComponent({
             >
               <Icon
                 icon="dashicons:whatsapp"
-                color="#719bde"
+                color="#5eead4"
                 width={48}
                 height={48}
                 className="lg:w-12 lg:h-12 md:w-11 md:h-11 w-9 h-9"
@@ -70,8 +69,9 @@ export default function PresentationComponent({
             </a>
           </div>
           <a
-            href="dev-jr-backend.pdf" target="_blank"
-            className="self-start py-2 px-3 bg-transparent border-b-2 rounded-md text-blue-50 transition-all hover:opacity-80 mt-2 hover:scale-105 sm:text-base text-xs"
+            href="dev-jr-backend.pdf"
+            target="_blank"
+            className="self-start py-2 px-3 bg-transparent border-b-2 border-teal-300 rounded-md text-blue-50 transition-all hover:opacity-80 mt-2 hover:scale-105 sm:text-base text-xs"
           >
             Baixar Currículo
           </a>

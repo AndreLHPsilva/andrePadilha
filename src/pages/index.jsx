@@ -5,7 +5,6 @@ import HeaderComponent from "@/components/HeaderComponent/HeaderComponent";
 import AbboutComponent from "@/components/AbboutComponent/AbboutComponent";
 import ExperienceComponent from "@/components/ExperienceComponent/ExperienceComponent";
 import ContactComponent from "@/components/ContactComponent/ContactComponent";
-import ProjectsComponent from "@/components/ProjectsComponent/ProjectsComponent";
 import MenuComponent from "@/components/MenuComponent/MenuComponent";
 
 import { AnimatePresence, motion } from "framer-motion";
@@ -193,32 +192,6 @@ export default function Home() {
             </AnimatePresence>
           </div>
         </SwiperSlide>
-
-        {/* <SwiperSlide>
-          <div style={{ position: "relative", height: "100%" }}>
-            <AnimatePresence initial={true}>
-              {activeIndex === 3 && (
-                <motion.div
-                  key={0}
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                  variants={headerVariants}
-                  transition={{ duration: 1.4 }}
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    zIndex: activeIndex === 3 ? 1 : -1,
-                  }}
-                >
-                  <ProjectsComponent />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        </SwiperSlide> */}
 
         <SwiperSlide>
           <div style={{ position: "relative", height: "100%" }}>

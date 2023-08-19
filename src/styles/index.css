@@ -1,12 +1,12 @@
 .swiper-pagination-bullet{
-  background-color: #00c7ff !important;
+  background-color: #5eead4 !important;
   opacity: .5 !important;
   transition: 0.3s !important;
   margin-right: .625rem !important;
 }
 
 .active-bullet {
-  background-color: #00c7ff;
+  background-color: #5eead4;
   opacity: 1 !important;
   transition: 0.3s;
   height: 16px;
@@ -18,12 +18,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #00c7ff; /* Cor do "ponteiro" da barra de rolagem */
+  background-color: #5eead4; /* Cor do "ponteiro" da barra de rolagem */
   border-radius: 6px; /* Raio das bordas do "ponteiro" */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #00c7ff; /* Cor do "ponteiro" da barra de rolagem ao passar o mouse */
+  background-color: #5eead4; /* Cor do "ponteiro" da barra de rolagem ao passar o mouse */
 }
 
 /* Gecko (Firefox) */
@@ -32,5 +32,5 @@ html {
 }
 
 body {
-  scrollbar-color: #00c7ff #fff; /* Cor do "ponteiro" e fundo da barra de rolagem */
+  scrollbar-color: #5eead4 #fff; /* Cor do "ponteiro" e fundo da barra de rolagem */
 }

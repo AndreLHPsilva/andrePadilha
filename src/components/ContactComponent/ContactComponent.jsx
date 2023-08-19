@@ -8,7 +8,7 @@ export default function ContactComponent() {
   return (
     <>
       <section
-        className="w-full h-screen flex flex-col justify-center md:mt-5 mt-12 lg:px-20 px-10 text-white lg:gap-14 sm:gap-10 gap-5"
+        className="w-full h-screen flex flex-col justify-center md:mt-5 mt-12 lg:px-20 px-12 text-white lg:gap-14 sm:gap-10 gap-5"
         id="contact"
       >
         <div>
@@ -25,20 +25,14 @@ export default function ContactComponent() {
           </div>
           <div className="lg:flex hidden flex-col gap-5">
             <h2 className="text-lg ">Outras opções:</h2>
-            <div className="flex gap-3">
+            <div className="flex gap-5">
               <a
                 href="https://api.whatsapp.com/send?phone=5512982451168"
                 target="_blank"
                 className="cursor-pointer hover:scale-110 duration-300 transition-all"
                 rel="noopener noreferrer"
               >
-                <Icon
-                  icon="dashicons:whatsapp"
-                  color="#00a2ff"
-                  width={48}
-                  height={48}
-                  className="lg:w-12 lg:h-12 md:w-11 md:h-11 w-9 h-9"
-                />
+                <Icon icon="icomoon-free:whatsapp" color="#5eead4" width="34" />
               </a>
               <a
                 href="https://www.linkedin.com/in/andr%C3%A9-henrique-0a6604179/"
@@ -46,13 +40,7 @@ export default function ContactComponent() {
                 target="_blank"
                 title="Link para LinkedIn"
               >
-                <Icon
-                  icon="mdi:linkedin"
-                  color="#00a2ff"
-                  width={48}
-                  height={48}
-                  className="lg:w-12 lg:h-12 md:w-11 md:h-11 w-9 h-9"
-                />
+                <Icon icon="teenyicons:linkedin-outline" color="#5eead4" width="34" />
               </a>
             </div>
           </div>

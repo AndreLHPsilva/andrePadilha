@@ -5,6 +5,11 @@
 body {
   font-family: "Poppins";
   animation: colorChange 3.5s infinite alternate;
+  min-height: 100vh;
+}
+#__next{
+  min-height: 100vh;
+
 }
 
 @keyframes colorChange {
@@ -23,8 +28,8 @@ body {
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0 30px #66acf9 inset !important;
-  box-shadow: 0 0 0 30px #66acf9 inset !important;
+  -webkit-box-shadow: 0 0 0 30px #5eead4 inset !important;
+  box-shadow: 0 0 0 30px #5eead4 inset !important;
   -webkit-text-fill-color: #333 !important;
 }
 
@@ -65,7 +70,7 @@ input:-webkit-autofill:focus {
 }
 
 input:focus {
-  border-color: #66acf9 !important;
+  border-color: #5eead4 !important;
   outline: none;
 }
 

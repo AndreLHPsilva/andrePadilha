@@ -107,7 +107,7 @@ export default function FormEmailComponent() {
         <input
           id="name"
           placeholder="John Doe"
-          className="rounded px-3 py-2 bg-transparent border-b-2 placeholder:text-gray-600"
+          className="rounded px-3 py-2 bg-transparent border-b-2 border-teal-700 placeholder:text-gray-600"
           onChange={(e) => setName(e.target.value)}
           required
         />
@@ -120,7 +120,7 @@ export default function FormEmailComponent() {
         <input
           id="email"
           type="email"
-          className="rounded px-3 py-2 bg-transparent border-b-2 placeholder:text-gray-600"
+          className="rounded px-3 py-2 bg-transparent border-b-2 border-teal-700 placeholder:text-gray-600"
           onChange={(e) => setEmail(e.target.value)}
           placeholder="mail@mail.com"
           required
@@ -138,7 +138,7 @@ export default function FormEmailComponent() {
           required
           onChange={(e) => setMessage(e.target.value)}
           rows={`${showRecaptcha ? "3" : "5"}`}
-          className="rounded px-3 py-2 bg-transparent border-b-2 focus:outline-none resize-none placeholder:text-gray-600"
+          className="rounded px-3 py-2 bg-transparent border-b-2 border-teal-700 focus:outline-none focus:border-teal-300 resize-none placeholder:text-gray-600"
           placeholder="Olá, gostei muito do seu portfolio..."
         />
       </fieldset>
@@ -152,7 +152,7 @@ export default function FormEmailComponent() {
 
       <button
         type="submit"
-        className="self-start py-2 px-3 bg-transparent border-2 rounded-md text-blue-50 transition-all hover:opacity-80 mt-2"
+        className="self-start py-2 px-3 bg-transparent border-2 border-teal-300 rounded-md text-teal-300 transition-all hover:opacity-80 mt-2"
       >
         Enviar
       </button>

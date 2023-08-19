@@ -1,15 +1,53 @@
 import MenuComponent from "@/components/MenuComponent/MenuComponent";
 import { listProjects } from "@/utils/listProjects";
 import { Icon } from "@iconify/react";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { useEffect, useState } from "react";
 
-export default function Projetos() {
+export default function Projects() {
+  const lengthArray = listProjects.length;
+  const [indexInitArray, setIndexInitArray] = useState(0);
+  const [indexFinishedArray, setIndexFinishedArray] = useState(3);
+
+  const [disableButtonNextProjects, setDisableButtonNextProjects] =
+    useState(false);
+  const [disableButtonPrevProjects, setDisableButtonPrevProjects] =
+    useState(true);
+
+  function handleNextProjects() {
+    if (indexFinishedArray <= lengthArray) {
+      if (indexFinishedArray + 3 == lengthArray) {
+        setDisableButtonNextProjects(true);
+      }
+
+      setIndexFinishedArray((value) => value + 3);
+      setIndexInitArray((value) => value + 3);
+      setDisableButtonPrevProjects(false);
+    }
+  }
+
+  function handlePrevProjects() {
+    if (indexInitArray > 0) {
+      if (indexInitArray - 3 == 0) {
+        setDisableButtonPrevProjects(true);
+      }
+
+      setIndexFinishedArray((value) => value - 3);
+      setIndexInitArray((value) => value - 3);
+      setDisableButtonNextProjects(false);
+    }
+  }
+
+  useEffect(() => {
+    if (lengthArray <= 3) {
+      setDisableButtonNextProjects(true);
+    }
+  }, []);
+
   return (
     <>
       <MenuComponent activeIndex={99} withoutSwipper={true} />
-      <main className="pt-28 text-white lg:px-20 px-10">
-        <section className="flex flex-col lg:gap-10 gap-5">
+      <main className="flex flex-col justify-between pt-28 text-white lg:px-20 px-10 min-h-screen">
+        <section className="flex flex-col lg:gap-5 gap-3 min-h-screen">
           <div className="flex flex-col gap-5">
             <div>
               <span className="uppercase tracking-widest lg:text-2xl md:text-xl sm:text-lg text-sm">
@@ -19,44 +57,117 @@ export default function Projetos() {
                 Projetos
               </h1>
             </div>
-
-            <span className="lg:text-xl md:text-lg sm:text-base text-sm">
-              Aqui estão alguns de meus projetos, você pode saber mais sobre
-              cada um clicando no icone do GitHub.
-            </span>
           </div>
-          <section className="my-10 w-full">
-            <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 max-h-10">
-              {listProjects.length > 0 &&
-                listProjects.map((project) => {
-                  return (
-                    <>
-                      <div className="rounded-lg bg-neutral-200 text-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] flex flex-col">
-                        <div className="border-b-2 border-neutral-100 px-6 py-3 text-black">
-                          {project.title}
-                        </div>
-                        <div className="p-6 flex-1">
-                          <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800">
-                            {project.title}
-                          </h5>
-                          <p className="mb-4 text-sm text-neutral-600 ">
-                            {project.description}
-                          </p>
-                        </div>
-                        <div className="border-t-2 border-neutral-100 px-6 py-3 text-black">
-                          <div className="flex gap-2">
-                            {project.tecnologies.map((tecnology) => {
-                              return <span>{tecnology.name}</span>;
-                            })}
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  );
-                })}
+          <section className="mt-10 w-full flex-1 flex">
+            <div className="flex flex-col justify-between gap-5 flex-1">
+              <div className="mb-10">
+                <div className="flex gap-5 w-full justify-center mb-10">
+                  <button
+                    disabled={disableButtonPrevProjects}
+                    onClick={handlePrevProjects}
+                    className="disabled:opacity-50"
+                  >
+                    Anteriores
+                  </button>
+                  <button
+                    disabled={disableButtonNextProjects}
+                    onClick={handleNextProjects}
+                    className="disabled:opacity-50"
+                  >
+                    Próximos
+                  </button>
+                </div>
+                <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-7">
+                  {listProjects.length > 0 &&
+                    listProjects
+                      .slice(indexInitArray, indexFinishedArray)
+                      .map((project, index) => {
+                        return (
+                          <>
+                            <div
+                              className="rounded-lg text-center h-24 overflow-hidden hover:h-80 transition-all shadow-md shadow-teal-300 flex flex-col"
+                              key={index}
+                            >
+                              <div className="p-6 flex-1">
+                                <h5 className="mb-2 text-xl font-medium leading-tight">
+                                  {project.title}
+                                </h5>
+                                <p className="text-sm">{project.description}</p>
+                              </div>
+                              <div className="border-t  px-6 py-3">
+                                <div className="flex gap-2">
+                                  {project.tecnologies.map((tecnology) => {
+                                    return <span>{tecnology.name}</span>;
+                                  })}
+                                </div>
+                              </div>
+                            </div>
+                          </>
+                        );
+                      })}
+                </div>
+              </div>
             </div>
           </section>
         </section>
+        <footer className="flex max-[426px]:flex-col gap-5 sm:justify-around items-center py-5 border-t border-teal-300">
+          <div className="flex flex-col gap-5">
+            <div className="flex gap-5 w-full justify-center">
+              <a
+                href="https://github.com/AndreLHPsilva"
+                className="cursor-pointer hover:scale-110 duration-300 transition-all"
+                target="_blank"
+                title="Link para GitHub"
+              >
+                <Icon
+                  icon="codicon:github"
+                  color="#5eead4"
+                  width="34"
+                  className="md:w-[2.125rem] w-7"
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/andr%C3%A9-henrique-0a6604179/"
+                className="cursor-pointer hover:scale-110 duration-300 transition-all"
+                target="_blank"
+                title="Link para LinkedIn"
+              >
+                <Icon
+                  icon="teenyicons:linkedin-outline"
+                  color="#5eead4"
+                  width="34"
+                  className="md:w-[2.125rem] w-7"
+                />
+              </a>
+              <a
+                href="https://api.whatsapp.com/send?phone=5512982451168"
+                className="cursor-pointer hover:scale-110 duration-300 transition-all"
+                target="_blank"
+                title="Link para WhatsApp"
+              >
+                <Icon
+                  icon="icomoon-free:whatsapp"
+                  color="#5eead4"
+                  width="34"
+                  className="md:w-[2.125rem] w-7"
+                />
+              </a>
+            </div>
+          </div>
+          <div className="text-white flex flex-col items-center justify-center">
+            <span>André Luiz</span>
+            <span>© {new Date().getFullYear()}</span>
+          </div>
+          <div>
+            <a
+              href="dev-jr-backend.pdf"
+              target="_blank"
+              className="self-start py-2 px-3 bg-transparent border-b-2 border-teal-300 rounded-md text-teal-300 transition-all hover:opacity-80 mt-2 hover:scale-105 sm:text-base text-xs"
+            >
+              Baixar Currículo
+            </a>
+          </div>
+        </footer>
       </main>
     </>
   );

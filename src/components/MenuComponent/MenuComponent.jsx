@@ -33,7 +33,7 @@ export default function MenuComponent({
   return (
     <>
       <header
-        className={`w-full fixed flex justify-around items-center sm:py-5 py-2 border-b-2 border-gray-50 border-opacity-5 backdrop-blur-sm backdrop-brightness-90 z-40 ${
+        className={`w-full fixed flex justify-around items-center sm:py-5 py-2 border-b-2 border-teal-200 border-opacity-5 backdrop-blur-sm backdrop-brightness-90 z-40 ${
           openMenu
             ? "max-[769px]:flex-col max-[769px]:h-screen max-[769px]:justify-start max-[769px]:backdrop-brightness-50 max-[769px]:transition-all"
             : ""
@@ -66,8 +66,8 @@ export default function MenuComponent({
           <Icon
             icon="ep:close-bold"
             color="#004bc3"
-            width={48}
-            height={48}
+            width={40}
+            height={40}
             className={`min-[769px]:hidden cursor-pointer z-50 hover:scale-110 ${
               openMenu ? "" : "max-[769px]:hidden"
             }`}
@@ -76,8 +76,8 @@ export default function MenuComponent({
           <Icon
             icon="ci:menu-alt-01"
             color="#004bc3"
-            width={48}
-            height={48}
+            width={40}
+            height={40}
             className={`min-[769px]:hidden cursor-pointer z-50 hover:scale-110 ${
               openMenu ? "max-[769px]:hidden" : ""
             }`}
@@ -104,7 +104,7 @@ export default function MenuComponent({
               <span
                 className={`p-[1px] rounded transition-all duration-300 ${
                   activeIndex == 0
-                    ? "bg-[#719bde] w-full"
+                    ? "bg-[#5eead4] w-full"
                     : "bg-transparent w-0"
                 }`}
               ></span>
@@ -119,7 +119,7 @@ export default function MenuComponent({
               <span
                 className={`p-[1px] rounded transition-all duration-300 ${
                   activeIndex == 1
-                    ? "bg-[#719bde] w-full"
+                    ? "bg-[#5eead4] w-full"
                     : "bg-transparent w-0"
                 }`}
               ></span>
@@ -134,7 +134,7 @@ export default function MenuComponent({
               <span
                 className={`p-[1px] rounded transition-all duration-300 ${
                   activeIndex == 2
-                    ? "bg-[#719bde] w-full"
+                    ? "bg-[#5eead4] w-full"
                     : "bg-transparent w-0"
                 }`}
               ></span>
@@ -149,7 +149,7 @@ export default function MenuComponent({
               <span
                 className={`p-[1px] rounded transition-all duration-300 ${
                   activeIndex == 99
-                    ? "bg-[#719bde] w-full"
+                    ? "bg-[#5eead4] w-full"
                     : "bg-transparent w-0"
                 }`}
               ></span>
@@ -164,7 +164,7 @@ export default function MenuComponent({
               <span
                 className={`p-[1px] rounded transition-all duration-300 ${
                   activeIndex == 3
-                    ? "bg-[#719bde] w-full"
+                    ? "bg-[#5eead4] w-full"
                     : "bg-transparent w-0"
                 }`}
               ></span>
