@@ -46,7 +46,7 @@ export default function Projects() {
   return (
     <>
       <MenuComponent activeIndex={99} withoutSwipper={true} />
-      <main className="flex flex-col justify-between pt-20 text-white lg:px-20 px-10 min-h-screen sm:gap-0 gap-10">
+      <main className="flex flex-col justify-between pt-24 text-white lg:px-20 px-10 min-h-screen sm:gap-0 gap-10">
         <section className="flex flex-col lg:gap-5 gap-3">
           <div className="flex flex-col gap-5">
             <div>
@@ -58,10 +58,10 @@ export default function Projects() {
               </h1>
             </div>
           </div>
-          <section className="mt-10 w-full flex-1 flex">
+          <section className="mt-5 w-full flex-1 flex">
             <div className="flex flex-col justify-between gap-5 flex-1">
               <div className="">
-                <div className="flex gap-5 w-full justify-center mb-10">
+                <div className="flex gap-5 w-full justify-center mb-5">
                   <button
                     disabled={disableButtonPrevProjects}
                     onClick={handlePrevProjects}
@@ -85,19 +85,19 @@ export default function Projects() {
                         return (
                           <>
                             <div
-                              className="rounded-lg text-center h-24 overflow-hidden hover:h-72 transition-all shadow-md shadow-teal-300 flex flex-col"
+                              className="rounded-lg text-center lg:h-96 h-28 overflow-hidden max-[976px]:hover:h-80 transition-all shadow-md shadow-teal-300 flex flex-col"
                               key={index}
                             >
-                              <div className="p-6 flex-1">
-                                <h5 className="mb-2 text-xl font-medium leading-tight">
+                              <div className="sm:p-6 p-3 flex-1">
+                                <h5 className="mb-2 text-xl font-medium leading-tight border-b border-teal-300 pb-3">
                                   {project.title}
                                 </h5>
-                                <p className="text-sm max-[375px]:hover:h-40 max-h-60 overflow-y-scroll">
+                                <p className="text-sm max-[375px]:hover:h-40 sm:max-h-60 max-h-40 overflow-y-scroll">
                                   {project.description}
                                 </p>
                               </div>
-                              <div className="border-t px-6 py-3">
-                                <div className="flex gap-2">
+                              <div className="px-6 py-3">
+                                <div className="flex gap-2 border-t border-teal-300 pt-3 px-3">
                                   {project.tecnologies.map((tecnology) => {
                                     return <span>{tecnology.name}</span>;
                                   })}
