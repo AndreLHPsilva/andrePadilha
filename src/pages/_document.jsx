@@ -11,6 +11,10 @@ export default function Document() {
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>Portfolio - Padilha</title>
+        <meta name="description" content="O Desenvolvedor Backend que falta na sua empresa!" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <body>
         <Main />
