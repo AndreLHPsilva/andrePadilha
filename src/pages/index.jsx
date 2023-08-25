@@ -3,12 +3,12 @@ import "swiper/swiper-bundle.min.css";
 import { useEffect, useRef, useState } from "react";
 import HeaderComponent from "@/components/HeaderComponent/HeaderComponent";
 import AbboutComponent from "@/components/AbboutComponent/AbboutComponent";
-import ExperienceComponent from "@/components/ExperienceComponent/ExperienceComponent";
 import ContactComponent from "@/components/ContactComponent/ContactComponent";
 import MenuComponent from "@/components/MenuComponent/MenuComponent";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
+import TechnologiesComponent from "@/components/TechnologiesComponent/TechnologiesComponent";
 
 const headerVariants = {
   initial: { opacity: 0, x: "-100%" },
@@ -21,10 +21,11 @@ export default function Home() {
   const queryActiveIndex = router.query.activeIndex;
 
   const swiperRef = useRef(null);
-  const [activeIndex, setActiveIndex] = useState(!!queryActiveIndex ? queryActiveIndex : 0);
+  const [activeIndex, setActiveIndex] = useState(
+    !!queryActiveIndex ? queryActiveIndex : 0
+  );
   const [scrolling, setScrolling] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
-
 
   useEffect(() => {
     const handleScroll = (e) => {
@@ -38,8 +39,16 @@ export default function Home() {
         setScrolling(true);
 
         if (deltaY > 0 && activeIndex < slidesLength - 1) {
+          const nextIndex = activeIndex + 1;
+          if (nextIndex === 3) {
+            router.push("/projetos");
+          }
           swiper.slideNext(800);
         } else if (deltaY < 0 && activeIndex > 0) {
+          const nextIndex = activeIndex - 1;
+          if (nextIndex === 3) {
+            router.push("/projetos");
+          }
           swiper.slidePrev(800);
         }
 
@@ -60,10 +69,10 @@ export default function Home() {
     const swiper = swiperRef.current?.swiper;
     swiper?.updateActiveIndex(index);
     setActiveIndex(index);
-    if(index != 99){
+    if (index != 99) {
       swiper?.slideTo(index, 700);
-    }else{
-      router.push("/projetos")
+    } else {
+      router.push("/projetos");
     }
   }
 
@@ -74,7 +83,7 @@ export default function Home() {
   useEffect(() => {
     const swiper = swiperRef.current?.swiper;
 
-    if(!!queryActiveIndex){
+    if (!!queryActiveIndex) {
       goToIndex(activeIndex);
     }
 
@@ -104,6 +113,10 @@ export default function Home() {
     <>
       <MenuComponent activeIndex={activeIndex} goToIndex={goToIndex} />
       <Swiper
+        onSlideChange={(e) =>
+          (e.activeIndex == 3 ||
+          e.activeIndex == 99) && router.push("/projetos")
+        }
         ref={swiperRef}
         direction="vertical"
         slidesPerView={1}
@@ -186,17 +199,19 @@ export default function Home() {
                     zIndex: activeIndex === 2 ? 1 : -1,
                   }}
                 >
-                  <ExperienceComponent />
+                  <TechnologiesComponent />
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
         </SwiperSlide>
 
+        <SwiperSlide></SwiperSlide>
+
         <SwiperSlide>
           <div style={{ position: "relative", height: "100%" }}>
             <AnimatePresence initial={false}>
-              {activeIndex === 3 && (
+              {activeIndex === 4 && (
                 <motion.div
                   key={0}
                   initial="initial"
@@ -209,7 +224,7 @@ export default function Home() {
                     top: 0,
                     left: 0,
                     right: 0,
-                    zIndex: activeIndex === 3 ? 1 : -1,
+                    zIndex: activeIndex === 4 ? 1 : -1,
                   }}
                 >
                   <ContactComponent />

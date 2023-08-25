@@ -8,9 +8,9 @@ export default function PresentationComponent({
 }) {
   return (
     <>
-      <div className="h-screen w-full grid md:grid-cols-2 grid-cols-1 grid-rows-1 justify-center items-center max-[426px]:px-10 px-14">
+      <div className="h-screen w-full grid md:grid-cols-2 grid-cols-1 grid-rows-1 justify-center items-center max-[426px]:px-10 container m-auto">
         <div className="flex flex-col justify-center gap-4 relative xl:px-14 lgg:px-10 md:px-5 px-10">
-          <span className="tracking-tighter text-gray-500 xl:text-6xl lgg:text-3xl md:text-2xl sm:text-lg text-xl">
+          <span className="tracking-tighter text-gray-500 xl:text-5xl lgg:text-3xl md:text-2xl sm:text-lg text-2xl">
             Desenvolvedor Backend
           </span>
           <p className="text-gray-300 xl:text-2xl lgg:text-xl md:text-lg sm:text-base text-sm">

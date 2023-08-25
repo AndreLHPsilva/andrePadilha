@@ -157,13 +157,13 @@ export default function MenuComponent({
             <li
               className="hover:scale-110 transition-all flex flex-col"
               onClick={() => {
-                handleChangeMenu(3);
+                handleChangeMenu(4);
               }}
             >
               <h2 className="cursor-pointer">Contato</h2>
               <span
                 className={`p-[1px] rounded transition-all duration-300 ${
-                  activeIndex == 3
+                  activeIndex == 4
                     ? "bg-[#5eead4] w-full"
                     : "bg-transparent w-0"
                 }`}

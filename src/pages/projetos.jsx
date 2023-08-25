@@ -53,24 +53,20 @@ export default function Projects() {
   return (
     <>
       <MenuComponent activeIndex={99} withoutSwipper={true} />
-      <main className="flex flex-col justify-between pt-24 text-white lg:px-20 px-10 min-h-screen sm:gap-0 gap-10">
-        <section className="flex flex-col lg:gap-5 gap-3 justify-center items-center">
-          <AnimatePresence initial={true}>
-            <motion.main
-              key={0}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              variants={headerVariants}
-              transition={{ duration: 1.4 }}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                height: "100%",
-                justifyContent: "center",
-                alignContent: "center",
-              }}
-            >
+      <AnimatePresence initial={true}>
+        <motion.main
+          key={0}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          variants={headerVariants}
+          transition={{ duration: 1.4 }}
+          style={{
+            height: "100%"
+          }}
+        >
+          <main className="flex flex-col justify-between pt-24 text-white lg:px-20 px-10 min-h-screen sm:gap-0 gap-10">
+            <section className="flex flex-col lg:gap-5 gap-3">
               <div className="flex flex-col gap-5">
                 <div>
                   <span className="uppercase tracking-widest lg:text-2xl md:text-xl sm:text-lg text-sm">
@@ -141,68 +137,68 @@ export default function Projects() {
                   </div>
                 </div>
               </section>
-            </motion.main>
-          </AnimatePresence>
-        </section>
-        <footer className="flex max-[426px]:flex-col gap-5 sm:justify-around items-center py-5 border-t border-teal-300">
-          <div className="flex flex-col gap-5">
-            <div className="flex gap-5 w-full justify-center">
-              <a
-                href="https://github.com/AndreLHPsilva"
-                className="cursor-pointer hover:scale-110 duration-300 transition-all"
-                target="_blank"
-                title="Link para GitHub"
-              >
-                <Icon
-                  icon="codicon:github"
-                  color="#5eead4"
-                  width="34"
-                  className="md:w-[2.125rem] w-7"
-                />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/andr%C3%A9-henrique-0a6604179/"
-                className="cursor-pointer hover:scale-110 duration-300 transition-all"
-                target="_blank"
-                title="Link para LinkedIn"
-              >
-                <Icon
-                  icon="teenyicons:linkedin-outline"
-                  color="#5eead4"
-                  width="34"
-                  className="md:w-[2.125rem] w-7"
-                />
-              </a>
-              <a
-                href="https://api.whatsapp.com/send?phone=5512982451168"
-                className="cursor-pointer hover:scale-110 duration-300 transition-all"
-                target="_blank"
-                title="Link para WhatsApp"
-              >
-                <Icon
-                  icon="icomoon-free:whatsapp"
-                  color="#5eead4"
-                  width="34"
-                  className="md:w-[2.125rem] w-7"
-                />
-              </a>
-            </div>
-          </div>
-          <div className="text-white flex flex-col items-center justify-center">
-            <span>André Luiz</span>
-            <span>© {new Date().getFullYear()}</span>
-          </div>
-          <div>
-            <a
-              href="dev-jr-backend.pdf"
-              target="_blank"
-              className="self-start py-2 px-3 bg-transparent border-b-2 border-teal-300 rounded-md text-teal-300 transition-all hover:opacity-80 mt-2 hover:scale-105 sm:text-base text-xs"
-            >
-              Baixar Currículo
-            </a>
-          </div>
-        </footer>
-      </main>
+            </section>
+            <footer className="flex max-[426px]:flex-col gap-5 sm:justify-around items-center py-5 border-t border-teal-300">
+              <div className="flex flex-col gap-5">
+                <div className="flex gap-5 w-full justify-center">
+                  <a
+                    href="https://github.com/AndreLHPsilva"
+                    className="cursor-pointer hover:scale-110 duration-300 transition-all"
+                    target="_blank"
+                    title="Link para GitHub"
+                  >
+                    <Icon
+                      icon="codicon:github"
+                      color="#5eead4"
+                      width="34"
+                      className="md:w-[2.125rem] w-7"
+                    />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/andr%C3%A9-henrique-0a6604179/"
+                    className="cursor-pointer hover:scale-110 duration-300 transition-all"
+                    target="_blank"
+                    title="Link para LinkedIn"
+                  >
+                    <Icon
+                      icon="teenyicons:linkedin-outline"
+                      color="#5eead4"
+                      width="34"
+                      className="md:w-[2.125rem] w-7"
+                    />
+                  </a>
+                  <a
+                    href="https://api.whatsapp.com/send?phone=5512982451168"
+                    className="cursor-pointer hover:scale-110 duration-300 transition-all"
+                    target="_blank"
+                    title="Link para WhatsApp"
+                  >
+                    <Icon
+                      icon="icomoon-free:whatsapp"
+                      color="#5eead4"
+                      width="34"
+                      className="md:w-[2.125rem] w-7"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div className="text-white flex flex-col items-center justify-center">
+                <span>André Luiz</span>
+                <span>© {new Date().getFullYear()}</span>
+              </div>
+              <div>
+                <a
+                  href="dev-jr-backend.pdf"
+                  target="_blank"
+                  className="self-start py-2 px-3 bg-transparent border-b-2 border-teal-300 rounded-md text-teal-300 transition-all hover:opacity-80 mt-2 hover:scale-105 sm:text-base text-xs"
+                >
+                  Baixar Currículo
+                </a>
+              </div>
+            </footer>
+          </main>
+        </motion.main>
+      </AnimatePresence>
     </>
   );
 }

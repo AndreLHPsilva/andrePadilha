@@ -1,10 +1,10 @@
 import { listTechnologies } from "@/utils/listTechnologies";
 import { Icon } from "@iconify/react";
 
-export default function ExperienceComponent() {
+export default function TechnologiesComponent() {
   return (
     <section
-      className=" text-white grid lg:grid-cols-2 grid-cols-1 grid-rows-1 h-screen justify-center xl:px-32 lgg:px-10 md:px-20 px-10 gap-5"
+      className=" text-white grid lg:grid-cols-2 grid-cols-1 grid-rows-1 h-screen justify-center xl:px-32 lgg:px-10 md:px-20 px-10 xl:gap-20 gap-10 container mx-auto"
       id="experience"
     >
       <div className="flex flex-col justify-center">

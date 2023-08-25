@@ -8,7 +8,7 @@ export default function ContactComponent() {
   return (
     <>
       <section
-        className="w-full h-screen flex flex-col justify-center max-[426px]:px-5 px-14 text-white lg:gap-14 sm:gap-10 gap-5"
+        className="w-full h-screen flex flex-col justify-center max-[426px]:px-5 px-14 text-white lg:gap-14 sm:gap-10 gap-5 container m-auto"
         id="contact"
       >
         <div>
@@ -23,7 +23,7 @@ export default function ContactComponent() {
           <div className="flex-1">
             <FormEmailComponent />
           </div>
-          <div className="lg:flex hidden flex-col justify-center w-full items-center gap-14">
+          <div className="lg:flex hidden flex-col justify-center w-full items-center gap-5">
             <div className="flex flex-col gap-3">
               <h2 className="text-lg ">Outras opções:</h2>
               <div className="flex gap-5 justify-center">
@@ -53,11 +53,11 @@ export default function ContactComponent() {
                 </a>
               </div>
             </div>
-            <div className="lg:flex hidden justify-center w-full opacity-60">
+            <div className="lg:flex hidden justify-center w-full opacity-70">
               <img
-                src="/imgs/contact.svg"
+                src="https://media.giphy.com/media/dxCKe2dx5qD7I5gMgj/giphy.gif"
                 alt="Imagem ilustrativa de um computador"
-                className="object-contain max-w-xs transition-all duration-500 hover:scale-105"
+                className="object-contain max-w-[280px] transition-all duration-500 hover:scale-105"
               />
             </div>
           </div>
