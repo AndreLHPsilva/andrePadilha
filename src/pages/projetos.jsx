@@ -62,11 +62,11 @@ export default function Projects() {
           variants={headerVariants}
           transition={{ duration: 1.4 }}
           style={{
-            height: "100%"
+            height: "95vh"
           }}
         >
           <main className="flex flex-col justify-between pt-24 text-white lg:px-20 px-10 min-h-screen sm:gap-0 gap-10">
-            <section className="flex flex-col lg:gap-5 gap-3">
+            <section className="flex flex-col lg:gap-3 gap-3">
               <div className="flex flex-col gap-5">
                 <div>
                   <span className="uppercase tracking-widest lg:text-2xl md:text-xl sm:text-lg text-sm">
@@ -111,7 +111,7 @@ export default function Projects() {
                             return (
                               <>
                                 <div
-                                  className="rounded-lg text-center lg:h-96 h-28 overflow-hidden max-[976px]:hover:h-80 transition-all shadow-md shadow-teal-300 flex flex-col"
+                                  className="rounded-lg text-center lg:h-80 h-28 overflow-hidden max-[976px]:hover:h-80 transition-all shadow-md shadow-teal-300 flex flex-col"
                                   key={index}
                                 >
                                   <div className="sm:p-6 p-3 flex-1">

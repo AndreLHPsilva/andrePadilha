@@ -8,19 +8,19 @@ export default function ContactComponent() {
   return (
     <>
       <section
-        className="w-full h-screen flex flex-col justify-center max-[426px]:px-5 px-14 text-white lg:gap-14 sm:gap-10 gap-5 container m-auto"
+        className="w-full h-screen flex flex-col justify-center max-[426px]:px-5 px-14 text-white lg:gap-14 sm:gap-10 gap-5 container mx-auto pt-16"
         id="contact"
       >
-        <div>
-          <span className="uppercase tracking-widest lg:text-2xl md:text-xl sm:text-lg text-xs">
-            entre em
-          </span>
-          <h1 className="font-semibold tracking-wider lg:text-6xl md:text-3xl sm:text-xl text-lg">
-            Contato
-          </h1>
-        </div>
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 w-full">
-          <div className="flex-1">
+          <div className="flex-1 flex flex-col xl:gap-20 gap-10">
+            <div>
+              <span className="uppercase tracking-widest lg:text-2xl md:text-xl sm:text-lg text-xs">
+                entre em
+              </span>
+              <h1 className="font-semibold tracking-wider lg:text-6xl md:text-3xl sm:text-xl text-lg">
+                Contato
+              </h1>
+            </div>
             <FormEmailComponent />
           </div>
           <div className="lg:flex hidden flex-col justify-center w-full items-center gap-5">

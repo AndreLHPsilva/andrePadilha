@@ -126,7 +126,7 @@ export default function Home() {
           thresholdDelta: 10,
         }}
         pagination={{ clickable: true, bulletActiveClass: "active-bullet" }}
-        style={{ height: "100vh" }}
+        style={{ height: "96vh", overflow: "hidden" }}
       >
         <SwiperSlide>
           <div style={{ position: "relative", height: "100%" }}>
