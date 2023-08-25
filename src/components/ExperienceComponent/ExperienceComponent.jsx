@@ -4,10 +4,10 @@ import { Icon } from "@iconify/react";
 export default function ExperienceComponent() {
   return (
     <section
-      className=" text-white flex flex-col h-screen justify-center max-[426px]:px-10 px-14 gap-5"
+      className=" text-white grid lg:grid-cols-2 grid-cols-1 grid-rows-1 h-screen justify-center xl:px-32 lgg:px-10 md:px-20 px-10 gap-5"
       id="experience"
     >
-      <div className="flex flex-col md:justify-center justify-end">
+      <div className="flex flex-col justify-center">
         <span className="uppercase tracking-widest lg:text-2xl md:text-xl sm:text-lg text-sm">
           Meus
         </span>
@@ -22,6 +22,13 @@ export default function ExperienceComponent() {
               })}
           </ul>
         </div>
+      </div>
+      <div className="lg:flex hidden w-full opacity-60">
+        <img
+          src="/imgs/logos.png"
+          alt=""
+          className="object-contain  xl:max-w-xl lgg:max-w-sm md:max-w-[280px] transition-all duration-500 hover:scale-110"
+        />
       </div>
     </section>
   );

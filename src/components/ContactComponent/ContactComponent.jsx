@@ -23,25 +23,42 @@ export default function ContactComponent() {
           <div className="flex-1">
             <FormEmailComponent />
           </div>
-          <div className="lg:flex hidden flex-col gap-5">
-            <h2 className="text-lg ">Outras opções:</h2>
-            <div className="flex gap-5">
-              <a
-                href="https://api.whatsapp.com/send?phone=5512982451168"
-                target="_blank"
-                className="cursor-pointer hover:scale-110 duration-300 transition-all"
-                rel="noopener noreferrer"
-              >
-                <Icon icon="icomoon-free:whatsapp" color="#5eead4" width="34" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/andr%C3%A9-henrique-0a6604179/"
-                className="cursor-pointer hover:scale-110 duration-300 transition-all"
-                target="_blank"
-                title="Link para LinkedIn"
-              >
-                <Icon icon="teenyicons:linkedin-outline" color="#5eead4" width="34" />
-              </a>
+          <div className="lg:flex hidden flex-col justify-center w-full items-center gap-14">
+            <div className="flex flex-col gap-3">
+              <h2 className="text-lg ">Outras opções:</h2>
+              <div className="flex gap-5 justify-center">
+                <a
+                  href="https://api.whatsapp.com/send?phone=5512982451168"
+                  target="_blank"
+                  className="cursor-pointer hover:scale-110 duration-300 transition-all"
+                  rel="noopener noreferrer"
+                >
+                  <Icon
+                    icon="icomoon-free:whatsapp"
+                    color="#5eead4"
+                    width="34"
+                  />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/andr%C3%A9-henrique-0a6604179/"
+                  className="cursor-pointer hover:scale-110 duration-300 transition-all"
+                  target="_blank"
+                  title="Link para LinkedIn"
+                >
+                  <Icon
+                    icon="teenyicons:linkedin-outline"
+                    color="#5eead4"
+                    width="34"
+                  />
+                </a>
+              </div>
+            </div>
+            <div className="lg:flex hidden justify-center w-full opacity-60">
+              <img
+                src="/imgs/contact.svg"
+                alt=""
+                className="object-contain max-w-xs transition-all duration-500 hover:scale-105"
+              />
             </div>
           </div>
         </div>

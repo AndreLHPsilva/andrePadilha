@@ -46,7 +46,7 @@ export default function Projects() {
   return (
     <>
       <MenuComponent activeIndex={99} withoutSwipper={true} />
-      <main className="flex flex-col justify-between pt-20 text-white lg:px-20 px-10">
+      <main className="flex flex-col justify-between pt-20 text-white lg:px-20 px-10 min-h-screen sm:gap-0 gap-10">
         <section className="flex flex-col lg:gap-5 gap-3">
           <div className="flex flex-col gap-5">
             <div>
@@ -60,7 +60,7 @@ export default function Projects() {
           </div>
           <section className="mt-10 w-full flex-1 flex">
             <div className="flex flex-col justify-between gap-5 flex-1">
-              <div className="mb-10">
+              <div className="">
                 <div className="flex gap-5 w-full justify-center mb-10">
                   <button
                     disabled={disableButtonPrevProjects}
@@ -85,16 +85,18 @@ export default function Projects() {
                         return (
                           <>
                             <div
-                              className="rounded-lg text-center h-24 overflow-hidden hover:h-80 transition-all shadow-md shadow-teal-300 flex flex-col"
+                              className="rounded-lg text-center h-24 overflow-hidden hover:h-72 transition-all shadow-md shadow-teal-300 flex flex-col"
                               key={index}
                             >
                               <div className="p-6 flex-1">
                                 <h5 className="mb-2 text-xl font-medium leading-tight">
                                   {project.title}
                                 </h5>
-                                <p className="text-sm">{project.description}</p>
+                                <p className="text-sm max-[375px]:hover:h-40 max-h-60 overflow-y-scroll">
+                                  {project.description}
+                                </p>
                               </div>
-                              <div className="border-t  px-6 py-3">
+                              <div className="border-t px-6 py-3">
                                 <div className="flex gap-2">
                                   {project.tecnologies.map((tecnology) => {
                                     return <span>{tecnology.name}</span>;
@@ -110,7 +112,7 @@ export default function Projects() {
             </div>
           </section>
         </section>
-        <footer className="flex max-[426px]:flex-col gap-5 sm:justify-around items-center py-5 border-t border-teal-300 mt-10">
+        <footer className="flex max-[426px]:flex-col gap-5 sm:justify-around items-center py-5 border-t border-teal-300">
           <div className="flex flex-col gap-5">
             <div className="flex gap-5 w-full justify-center">
               <a
