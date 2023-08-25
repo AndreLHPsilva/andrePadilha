@@ -25,7 +25,7 @@ export default function AbboutComponent() {
           <div className="lg:flex hidden justify-center w-full opacity-60">
             <img
               src="/imgs/perfil.svg"
-              alt=""
+              alt="Imagem de perfil ideal"
               className="object-contain max-w-md transition-all duration-500 hover:scale-110"
             />
           </div>

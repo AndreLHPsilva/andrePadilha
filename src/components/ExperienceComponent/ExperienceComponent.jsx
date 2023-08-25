@@ -26,7 +26,7 @@ export default function ExperienceComponent() {
       <div className="lg:flex hidden w-full opacity-60">
         <img
           src="/imgs/logos.png"
-          alt=""
+          alt="Todos os logos das tecnologias que o autor domina"
           className="object-contain  xl:max-w-xl lgg:max-w-sm md:max-w-[280px] transition-all duration-500 hover:scale-110"
         />
       </div>

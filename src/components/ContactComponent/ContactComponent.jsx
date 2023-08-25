@@ -56,7 +56,7 @@ export default function ContactComponent() {
             <div className="lg:flex hidden justify-center w-full opacity-60">
               <img
                 src="/imgs/contact.svg"
-                alt=""
+                alt="Imagem ilustrativa de um computador"
                 className="object-contain max-w-xs transition-all duration-500 hover:scale-105"
               />
             </div>

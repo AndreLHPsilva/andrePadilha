@@ -1,6 +1,7 @@
 import MenuComponent from "@/components/MenuComponent/MenuComponent";
 import { listProjects } from "@/utils/listProjects";
 import { Icon } from "@iconify/react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export default function Projects() {
@@ -43,74 +44,105 @@ export default function Projects() {
     }
   }, []);
 
+  const headerVariants = {
+    initial: { opacity: 0, x: "-100%" },
+    animate: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: "-100%" },
+  };
+
   return (
     <>
       <MenuComponent activeIndex={99} withoutSwipper={true} />
       <main className="flex flex-col justify-between pt-24 text-white lg:px-20 px-10 min-h-screen sm:gap-0 gap-10">
-        <section className="flex flex-col lg:gap-5 gap-3">
-          <div className="flex flex-col gap-5">
-            <div>
-              <span className="uppercase tracking-widest lg:text-2xl md:text-xl sm:text-lg text-sm">
-                Meus
-              </span>
-              <h1 className="font-semibold tracking-wider lg:text-6xl md:text-3xl sm:text-xl text-lg">
-                Projetos
-              </h1>
-            </div>
-          </div>
-          <section className="mt-5 w-full flex-1 flex">
-            <div className="flex flex-col justify-between gap-5 flex-1">
-              <div className="">
-                <div className="flex gap-5 w-full justify-center mb-5">
-                  <button
-                    disabled={disableButtonPrevProjects}
-                    onClick={handlePrevProjects}
-                    className="disabled:opacity-50"
-                  >
-                    Anteriores
-                  </button>
-                  <button
-                    disabled={disableButtonNextProjects}
-                    onClick={handleNextProjects}
-                    className="disabled:opacity-50"
-                  >
-                    Próximos
-                  </button>
-                </div>
-                <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-7">
-                  {listProjects.length > 0 &&
-                    listProjects
-                      .slice(indexInitArray, indexFinishedArray)
-                      .map((project, index) => {
-                        return (
-                          <>
-                            <div
-                              className="rounded-lg text-center lg:h-96 h-28 overflow-hidden max-[976px]:hover:h-80 transition-all shadow-md shadow-teal-300 flex flex-col"
-                              key={index}
-                            >
-                              <div className="sm:p-6 p-3 flex-1">
-                                <h5 className="mb-2 text-xl font-medium leading-tight border-b border-teal-300 pb-3">
-                                  {project.title}
-                                </h5>
-                                <p className="text-sm max-[375px]:hover:h-40 sm:max-h-60 max-h-40 overflow-y-scroll">
-                                  {project.description}
-                                </p>
-                              </div>
-                              <div className="px-6 py-3">
-                                <div className="flex gap-2 border-t border-teal-300 pt-3 px-3">
-                                  {project.tecnologies.map((tecnology) => {
-                                    return <span>{tecnology.name}</span>;
-                                  })}
-                                </div>
-                              </div>
-                            </div>
-                          </>
-                        );
-                      })}
+        <section className="flex flex-col lg:gap-5 gap-3 justify-center items-center">
+          <AnimatePresence initial={true}>
+            <motion.main
+              key={0}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              variants={headerVariants}
+              transition={{ duration: 1.4 }}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                height: "100%",
+                justifyContent: "center",
+                alignContent: "center",
+              }}
+            >
+              <div className="flex flex-col gap-5">
+                <div>
+                  <span className="uppercase tracking-widest lg:text-2xl md:text-xl sm:text-lg text-sm">
+                    Meus
+                  </span>
+                  <h1 className="font-semibold tracking-wider lg:text-6xl md:text-3xl sm:text-xl text-lg">
+                    Projetos
+                  </h1>
                 </div>
               </div>
-            </div>
-          </section>
+              <section className="mt-5 w-full flex-1 flex">
+                <div className="flex flex-col justify-between gap-5 flex-1">
+                  <div className="">
+                    <div className="flex gap-5 w-full justify-center mb-5">
+                      <button
+                        disabled={disableButtonPrevProjects}
+                        onClick={handlePrevProjects}
+                        className="disabled:opacity-50 disabled:cursor-not-allowed"
+                        title={
+                          disableButtonPrevProjects && "Sem projetos anteriores"
+                        }
+                      >
+                        Anteriores
+                      </button>
+                      <button
+                        disabled={disableButtonNextProjects}
+                        onClick={handleNextProjects}
+                        className="disabled:opacity-50 disabled:cursor-not-allowed"
+                        title={
+                          disableButtonNextProjects &&
+                          "Sem projetos posteriores"
+                        }
+                      >
+                        Próximos
+                      </button>
+                    </div>
+                    <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-7">
+                      {listProjects.length > 0 &&
+                        listProjects
+                          .slice(indexInitArray, indexFinishedArray)
+                          .map((project, index) => {
+                            return (
+                              <>
+                                <div
+                                  className="rounded-lg text-center lg:h-96 h-28 overflow-hidden max-[976px]:hover:h-80 transition-all shadow-md shadow-teal-300 flex flex-col"
+                                  key={index}
+                                >
+                                  <div className="sm:p-6 p-3 flex-1">
+                                    <h5 className="mb-2 text-xl font-medium leading-tight border-b border-teal-300 pb-3">
+                                      {project.title}
+                                    </h5>
+                                    <p className="text-sm max-[375px]:hover:h-40 sm:max-h-60 max-h-40 overflow-y-scroll">
+                                      {project.description}
+                                    </p>
+                                  </div>
+                                  <div className="px-6 py-3">
+                                    <div className="flex gap-2 border-t border-teal-300 pt-3 px-3">
+                                      {project.tecnologies.map((tecnology) => {
+                                        return <span>{tecnology.name}</span>;
+                                      })}
+                                    </div>
+                                  </div>
+                                </div>
+                              </>
+                            );
+                          })}
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </motion.main>
+          </AnimatePresence>
         </section>
         <footer className="flex max-[426px]:flex-col gap-5 sm:justify-around items-center py-5 border-t border-teal-300">
           <div className="flex flex-col gap-5">

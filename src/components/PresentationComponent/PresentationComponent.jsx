@@ -81,7 +81,7 @@ export default function PresentationComponent({
         <div className="flex justify-center items-center w-full ">
           <img
             src="/imgs/code.svg"
-            alt=""
+            alt="Imagem de uma tela de computador com códigos de programação"
             className="object-contain md:block hidden transition-all duration-500 xl:max-w-xl lgg:max-w-sm md:max-w-[280px] rotate-12 hover:scale-110"
           />
         </div>
