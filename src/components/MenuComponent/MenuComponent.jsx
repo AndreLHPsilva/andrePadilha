@@ -17,7 +17,7 @@ export default function MenuComponent({
 
   function handleChangeMenu(index) {
     if (!withoutSwipper) {
-      if(!!goToIndex){
+      if (!!goToIndex) {
         goToIndex(index);
         handleLinkMenu();
       }
@@ -142,6 +142,22 @@ export default function MenuComponent({
             <li
               className="hover:scale-110 transition-all flex flex-col"
               onClick={() => {
+                handleChangeMenu(3);
+              }}
+            >
+              <h2 className="cursor-pointer">Contato</h2>
+              <span
+                className={`p-[1px] rounded transition-all duration-300 ${
+                  activeIndex == 3
+                    ? "bg-[#5eead4] w-full"
+                    : "bg-transparent w-0"
+                }`}
+              ></span>
+            </li>
+
+            <li
+              className="hover:scale-110 transition-all flex flex-col"
+              onClick={() => {
                 handleChangeMenu(99);
               }}
             >
@@ -149,21 +165,6 @@ export default function MenuComponent({
               <span
                 className={`p-[1px] rounded transition-all duration-300 ${
                   activeIndex == 99
-                    ? "bg-[#5eead4] w-full"
-                    : "bg-transparent w-0"
-                }`}
-              ></span>
-            </li>
-            <li
-              className="hover:scale-110 transition-all flex flex-col"
-              onClick={() => {
-                handleChangeMenu(4);
-              }}
-            >
-              <h2 className="cursor-pointer">Contato</h2>
-              <span
-                className={`p-[1px] rounded transition-all duration-300 ${
-                  activeIndex == 4
                     ? "bg-[#5eead4] w-full"
                     : "bg-transparent w-0"
                 }`}

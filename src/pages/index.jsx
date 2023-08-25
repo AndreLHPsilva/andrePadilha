@@ -39,16 +39,8 @@ export default function Home() {
         setScrolling(true);
 
         if (deltaY > 0 && activeIndex < slidesLength - 1) {
-          const nextIndex = activeIndex + 1;
-          if (nextIndex === 3) {
-            router.push("/projetos");
-          }
           swiper.slideNext(800);
         } else if (deltaY < 0 && activeIndex > 0) {
-          const nextIndex = activeIndex - 1;
-          if (nextIndex === 3) {
-            router.push("/projetos");
-          }
           swiper.slidePrev(800);
         }
 
@@ -114,7 +106,7 @@ export default function Home() {
       <MenuComponent activeIndex={activeIndex} goToIndex={goToIndex} />
       <Swiper
         onSlideChange={(e) =>
-          (e.activeIndex == 3 ||
+          (e.activeIndex == 4 ||
           e.activeIndex == 99) && router.push("/projetos")
         }
         ref={swiperRef}
@@ -206,12 +198,10 @@ export default function Home() {
           </div>
         </SwiperSlide>
 
-        <SwiperSlide></SwiperSlide>
-
         <SwiperSlide>
           <div style={{ position: "relative", height: "100%" }}>
             <AnimatePresence initial={false}>
-              {activeIndex === 4 && (
+              {activeIndex === 3 && (
                 <motion.div
                   key={0}
                   initial="initial"
@@ -224,7 +214,7 @@ export default function Home() {
                     top: 0,
                     left: 0,
                     right: 0,
-                    zIndex: activeIndex === 4 ? 1 : -1,
+                    zIndex: activeIndex === 3 ? 1 : -1,
                   }}
                 >
                   <ContactComponent />
@@ -233,6 +223,8 @@ export default function Home() {
             </AnimatePresence>
           </div>
         </SwiperSlide>
+
+        <SwiperSlide></SwiperSlide>
       </Swiper>
     </>
   );
